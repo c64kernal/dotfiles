@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Theme
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Use vi keybindgs
 bindkey -v
