@@ -1,2 +1,5 @@
 alias vi='vim'
+alias e='gvim'
 alias tmux='tmux -2'
+alias aliases='pushd ~; gvim -f .aliases; source .aliases; popd'
+alias trees-osd='source ~/c64kernal/dotfiles/setup_osd_devenv.zsh ~/c64kernal/OpenSubdiv'
