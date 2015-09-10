@@ -8,6 +8,7 @@ filetype plugin indent on
 if !has("gui_running")
 	set t_Co=256
 endif
+colorscheme grb256
 set background=dark
 
 " Text Formatting

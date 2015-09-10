@@ -18,3 +18,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 source $HOME/.aliases
+
+# rm * if I want to without being bugged (rm is aliased to rm -i anyway)
+setopt rmstarsilent
