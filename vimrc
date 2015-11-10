@@ -9,6 +9,17 @@ if !has("gui_running")
 	set t_Co=256
 endif
 colorscheme grb256
+
+" Setup for vim-airline
+let g:airline_theme="ubaryd"
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+
+
 set background=dark
 
 " Text Formatting

@@ -1,0 +1,107 @@
+##############################################################################
+#
+# Generic config
+#
+##############################################################################
+
+# Check mail interval and timeout
+set mail_check=10
+set timeout=15
+
+# Stop asking to "move read messages to mbox" 
+set move=no
+
+# Don't ask for confirmation when appending messages to an existing mailbox
+unset confirmappend
+
+# Don't mark unread messages as Old
+unset mark_old
+
+# Always apply all operations to currently tagged messages
+# This is not great because it gets ignored in the pager
+set auto_tag
+
+# Format for the subject line of forwarded messages
+set forward_format="Fwd: %s"
+
+# Include body of previous message in a reply
+set include=yes
+
+# Skip all the questions when replying
+set fast_reply
+
+# Use format=flowed for nicer line breaks
+set text_flowed=yes
+
+# Edit headers in vim when composing mail, and don't prompt
+#set edit_headers=yes
+#set autoedit=yes
+
+
+##############################################################################
+# Index config
+#
+
+set sort=threads
+set sort_aux=reverse-last-date-received
+set sort_browser=reverse-date
+set index_format=" %Z %-4C %{%b %d} %-15.15L  %s"
+
+color index brightwhite default ~N   # bold new messages
+
+# Format the folder list
+set folder_format="%2C %f %> %N  "
+
+
+##############################################################################
+# Pager config
+#
+
+# Don't switch to next message automatically
+set pager_stop 
+
+# Show 15 lines fo the index when viewing mail.
+set pager_index_lines=15
+
+
+##############################################################################
+# Key bindings
+#
+
+# Follow urls by hitting Ctrl-u
+macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links'
+
+macro pager <down> <next-line>
+macro pager <up> <previous-line>
+
+
+# Shift-J to jump to folder
+macro index,pager J <change-folder>
+
+# tilde to jump to Inbox
+macro index,pager ~ <change-folder><kill-line>=Inbox<enter>
+
+# the pager doesn't support tag-prefix (and therefore also ignores auto_tag)
+# when saving messages, etc. (see http://dev.mutt.org/trac/ticket/3327).  So
+# to work around this, make 's' in the pager, quit back to the index before
+# saving message.
+macro pager s <exit><save-message>
+
+# In index, 'q' will switch to mailbox browser, when in mailbox browser
+# 'q' will quit mutt.
+macro index   q '<change-folder>?<toggle-mailboxes>'
+macro browser q '<exit><quit>'
+
+# d moves messages to Trash
+folder-hook .       "macro index,pager   d '<save-message>=Trash<enter>"
+folder-hook =Trash  "macro index,pager   d <delete-message>"
+
+macro editor        <tab> '<complete-query>'
+
+
+##############################################################################
+# Editor config
+#
+
+# Use vim as an editor and make it spellcheck and use format=flowed
+set editor="vim -c 'set spell spelllang=en | setlocal fo+=aw | set ft=mail' %s

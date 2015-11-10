@@ -14,7 +14,17 @@ plugins=(git)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Configure oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# Turn off history sharing, which gets turned on by default by OMZ 
+unsetopt share_history
+
+# Remove unwanted aliases from OMZ
+unalias ...
+unalias ....
+unalias .....
+unalias ......
 
 # Aliases
 source $HOME/.aliases
