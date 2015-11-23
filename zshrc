@@ -21,10 +21,10 @@ source $ZSH/oh-my-zsh.sh
 unsetopt share_history
 
 # Remove unwanted aliases from OMZ
-unalias ...
-unalias ....
-unalias .....
-unalias ......
+unalias "..."
+unalias "...."
+unalias "....."
+unalias "......"
 
 # Aliases
 source $HOME/.aliases
