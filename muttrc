@@ -33,6 +33,9 @@ set fast_reply
 # Use format=flowed for nicer line breaks
 set text_flowed=yes
 
+# Set the record folder to be the current folder
+folder-hook . set record=^
+
 # Edit headers in vim when composing mail, and don't prompt
 #set edit_headers=yes
 #set autoedit=yes
