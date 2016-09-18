@@ -26,6 +26,9 @@ unalias "...."
 unalias "....."
 unalias "......"
 
+# Turn on syntax highlighting for zsh
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Aliases
 source $HOME/.aliases
 
