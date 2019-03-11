@@ -12,6 +12,12 @@ ln -s tmux.conf ~/.tmux.conf
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/zsh-syntax-highlighting
 
+###############################################################################
+# Setup rust, cargo, fd-find and ripgrep
+#
+curl https://sh.rustup.rs -sSf | sh
+cargo install fd-find
+cargo install rg
 
 ###############################################################################
 # Setup vim
