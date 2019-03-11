@@ -101,6 +101,13 @@ folder-hook =Trash  "macro index,pager   d <delete-message>"
 
 macro editor        <tab> '<complete-query>'
 
+bind attach <return> view-mailcap
+
+##############################################################################
+# HTML handling
+#
+auto_view text/html  # view html attachments automatically
+
 
 ##############################################################################
 # Editor config
