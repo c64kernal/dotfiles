@@ -33,6 +33,8 @@ git clone git://github.com/tpope/vim-sensible.git
 git clone https://github.com/vim-scripts/a.vim.git a-vim
 git clone https://github.com/quanganhdo/grb256.git
 git clone https://github.com/vim-airline/vim-airline-themes vim-airline
+git clone https://github.com/preservim/tagbar.git
+git clone https://github.com/derekwyatt/vim-fswitch
 popd
 
 

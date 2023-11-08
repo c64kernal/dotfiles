@@ -31,11 +31,26 @@ set autoindent
 
 set textwidth=79
 
+" Terminal setup
+set termwinsize=12x0
+set splitbelow
+set mouse=a
+
 " No beeps!
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+
+" FSwitch setup
+au! BufEnter *.cpp let b:fswitchdst = 'hpp,h' | let b:fswitchlocs = '../include/**'
+au! BufEnter *.h   let b:fswitchdst = 'cpp,c' | let b:fswitchlocs = 'reg:/include//,../../src'
+
+
 " Plugin Shortcuts
 "
 " Alternate
-nmap <C-a> :A<CR>
+"nmap <C-a> :A<CR>
+nmap <C-a> :FSHere<CR>
+
+" Tagbar Toggle
+nmap <F8> :TagbarToggle<CR>
