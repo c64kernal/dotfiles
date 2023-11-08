@@ -34,3 +34,6 @@ source $HOME/.aliases
 
 # rm * if I want to without being bugged (rm is aliased to rm -i anyway)
 setopt rmstarsilent
+
+# To try to fix zsh being super slow in git repos
+DISABLE_UNTRACKED_FILES_DIRTY="true"
